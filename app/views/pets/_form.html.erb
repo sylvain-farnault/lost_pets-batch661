@@ -1,0 +1,19 @@
+<%
+=begin%>
+ <%= form_for(pet) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.select :species, collection: Pet::SPECIES %>
+  <%= f.text_field :address %>
+  <%= f.date_field :found_on %>
+  <%= f.submit "This is a poor lost pet", class: "awesome-class" %>
+<% end %>
+<%
+=end%>
+
+<%= simple_form_for pet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species, collection: Pet::SPECIES %>
+  <%= f.input :address %>
+  <%= f.input :found_on %>
+  <%= f.submit %>
+<% end %>
